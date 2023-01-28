@@ -1,0 +1,251 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Parametric Tuckbox Generator</title>
+  <meta name="description" content="Parametric tuckbox generator. Just bring your own images.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Parametric Tuckbox Generator">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/pico.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- <meta name="theme-color" content="#fafafa"> -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="var(--primary)" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="var(--primary)" />
+
+</head>
+
+<body>
+
+  <main class="container-fluid">
+    <h1 id="title">Parametric Tuckbox Generator</h1>
+    <div class="grid">
+      <div>
+        <form>
+          <details>
+            <summary value="page" role="button" class="step secondary outline">Step 1: Page Settings</summary>
+            <div class="grid">
+              <div>
+                <label for="size">Size</label>
+                <select name="size">
+                  <option value="letter">Letter (8.5in x 11in)</option>
+                  <option value="a4">A4 (8.3in x 11.7in)</option>
+                  <option value="legal">Legal (8.5in x 14in)</option>
+                </select>
+              </div>
+
+              <div>
+                <fieldset>
+                  <legend>Orientation</legend>
+                  <label for="orientation-auto">
+                    <input type="radio" id="orientation-auto" name="orientation" value="auto" checked>
+                    Auto
+                  </label>
+                  <label for="orientation-portrait">
+                    <input type="radio" id="orientation-portrait" name="orientation" value="portrait">
+                    Portrait
+                  </label>
+                  <label for="orientation-landscape">
+                    <input type="radio" id="orientation-landscape" name="orientation" value="landscape">
+                    Landscape
+                  </label>
+                </fieldset>
+              </div>
+
+              <div><label for="dpi">
+                  Printer DPI
+                  <input type="number" name="dpi" value="300">
+                </label>
+              </div>
+            </div>
+          </details>
+
+          <details>
+            <summary value="box" role="button" class="step secondary outline">Step 2: Box Settings</summary>
+            <div class="grid">
+              <div>
+                <label for="width">
+                  Width (in)
+                  <input type="number" name="width" step="0.1" value="2.9">
+                </label>
+              </div>
+
+              <div><label for="height">
+                  Height (in)
+                  <input type="number" name="height" step="0.1" value="2.6">
+                </label>
+              </div>
+
+              <div>
+                <label for="depth">
+                  Depth (in)
+                  <input type="number" name="depth" step="0.1" value="0.53">
+                </label>
+              </div>
+            </div>
+
+            <!-- <div class="grid">
+              <div>
+                <label for="sleeveMode">
+                  <input type="checkbox" name="sleeveMode" role="switch">
+                  Sleeve Mode (no lid)
+                </label>
+              </div>
+              <div class="ez-open-container">
+                <label for="ezOpen">
+                  <input type="checkbox" name="ezOpen" role="switch">
+                  Easy Open
+                </label>
+              </div>
+              <div class="open-side-container hidden">
+                <fieldset>
+                  <legend>Open Side</legend>
+                  <label for="openSide-top">
+                    <input type="radio" id="openSide-top" name="openSide" value="top" checked>
+                    Top
+                  </label>
+                  <label for="openSide-left">
+                    <input type="radio" id="openSide-left" name="openSide" value="left">
+                    Left
+                  </label>
+                  <label for="openSide-right">
+                    <input type="radio" id="openSide-right" name="openSide" value="right">
+                    Right
+                  </label>
+                </fieldset>
+              </div>
+            </div> -->
+          </details>
+
+          <details>
+            <summary value="image" role="button" class="step secondary outline">Step 3: Images</summary>
+            <div class="bgColorContainer">
+              <label for="bgColor">Background Color</label>
+              <input type="color" name="bgColor" value="#ffffff">
+            </div>
+            <div class="grid">
+              <div>
+                <input type="number" class="hidden" name="frontRotation" value="0">
+                <input type="file" accept="image/*" name="front" class="hidden">
+                <span>
+                  Front image
+                </span>
+                <span class="image-controls">
+                  <input type="button" class="secondary inline" onclick="rotateImage('front')" value="⭮">
+                  <input type="button" class="secondary inline" onclick="removeImage('front')" value="🗙">
+                  <input type="button" class="secondary inline" onclick="uploadImage('front')" value="⤒">
+                </span>
+                <div id="frontFilename" class="filename"></div>
+              </div>
+
+              <div>
+                <input type="number" class="hidden" name="backRotation" value="0">
+                <input type="file" class="hidden" name="back" accept="image/*">
+                <span>
+                  Back image
+                </span>
+                <span class="image-controls">
+                  <input type="button" class="secondary inline" onclick="rotateImage('back')" value="⭮">
+                  <input type="button" class="secondary inline" onclick="removeImage('back')" value="🗙">
+                  <input type="button" class="secondary inline" onclick="uploadImage('back')" value="⤒">
+                </span>
+                <div id="backFilename" class="filename"></div>
+              </div>
+            </div>
+
+            <div class="grid">
+              <div>
+                <input type="number" class="hidden" name="leftRotation" value="0">
+                <input type="file" class="hidden" name="left" accept="image/*">
+                <span>
+                  Left image
+                </span>
+                <span class="image-controls">
+                  <input type="button" class="secondary inline" onclick="rotateImage('left')" value="⭮">
+                  <input type="button" class="secondary inline" onclick="removeImage('left')" value="🗙">
+                  <input type="button" class="secondary inline" onclick="uploadImage('left')" value="⤒">
+                </span>
+                <div id="leftFilename" class="filename"></div>
+              </div>
+
+              <div>
+                <input type="number" class="hidden" name="rightRotation" value="0">
+                <input type="file" class="hidden" name="right" accept="image/*">
+                <span>
+                  Right image
+                </span>
+                <span class="image-controls">
+                  <input type="button" class="secondary inline" onclick="rotateImage('right')" value="⭮">
+                  <input type="button" class="secondary inline" onclick="removeImage('right')" value="🗙">
+                  <input type="button" class="secondary inline" onclick="uploadImage('right')" value="⤒">
+                </span>
+                <div id="rightFilename" class="filename"></div>
+              </div>
+            </div>
+
+            <div class="grid">
+              <div>
+                <input type="number" class="hidden" name="topRotation" value="0">
+                <input type="file" class="hidden" name="top" accept="image/*">
+                <span>
+                  Top image
+                </span>
+                <span class="image-controls">
+                  <input type="button" class="secondary inline" onclick="rotateImage('top')" value="⭮">
+                  <input type="button" class="secondary inline" onclick="removeImage('top')" value="🗙">
+                  <input type="button" class="secondary inline" onclick="uploadImage('top')" value="⤒">
+                </span>
+                <div id="topFilename" class="filename"></div>
+              </div>
+
+              <div>
+                <input type="number" class="hidden" name="bottomRotation" value="0">
+                <input type="file" class="hidden" name="bottom" accept="image/*">
+                <span>
+                  Bottom image
+                </span>
+                <span class="image-controls">
+                  <input type="button" class="secondary inline" onclick="rotateImage('bottom')" value="⭮">
+                  <input type="button" class="secondary inline" onclick="removeImage('bottom')" value="🗙">
+                  <input type="button" class="secondary inline" onclick="uploadImage('bottom')" value="⤒">
+                </span>
+                <div id="bottomFilename" class="filename"></div>
+              </div>
+            </div>
+          </details>
+
+          <details>
+            <summary value="save" role="button" class="step secondary outline">Step 4: Save</summary>
+            <div class="grid">
+              <div>
+                <input type="button" onclick="generate()" value="Generate">
+                <a id="download" role="button" target="_blank">Download</a>
+              </div>
+              <!-- <div>
+                <input type="button" onclick="saveBox()" value="Save box">
+                <input type="button" onclick="loadBox()" value="Load box">
+              </div>
+            </div> -->
+          </details>
+        </form>
+      </div>
+      <div id="preview" class="column"></div>
+    </div>
+  </main>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

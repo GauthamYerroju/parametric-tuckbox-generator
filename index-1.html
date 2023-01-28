@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tuckbox Generator</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+  <link rel="stylesheet" href="css/pico.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <main class="container-fluid">
+    <h1 id="title">Gameboy Tuckbox Generator</h1>
+    <div class="grid">
+      <div>
+        <form>
+          <fieldset class="grid">
+            <!-- <legend>Size</legend> -->
+            <div>
+              <label for="width">
+                Width
+                <input type="number" name="width" value="2.9">
+              </label>
+            </div>
+
+            <div><label for="height">
+                Height
+                <input type="number" name="height" value="2.6">
+              </label>
+            </div>
+
+            <div>
+              <label for="depth">
+                Depth
+                <input type="number" name="depth" value="0.53">
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <!-- <legend>Images</legend> -->
+            <div class="grid">
+              <label for="front">Front
+                <input type="file" name="front">
+              </label>
+
+              <label for="back">Back
+                <input type="file" name="back">
+              </label>
+            </div>
+
+            <div class="grid">
+              <label for="left">Left
+                <input type="file" name="left">
+              </label>
+
+              <label for="right">Right
+                <input type="file" name="right">
+              </label>
+            </div>
+
+            <div class="grid">
+              <label for="top">Top
+                <input type="file" name="top">
+              </label>
+
+              <label for="bottom">Bottom
+                <input type="file" name="bottom">
+              </label>
+            </div>
+
+            <label for="bg-color">Background Color
+              <input type="color" name="bg-color" value="#ffffff">
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <div class="grid">
+              <input type="button" onclick="generate()" value="Generate">
+              <a id="download" role="button" target="_blank">Download</a>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div id="preview" class="column"></div>
+    </div>
+  </main>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

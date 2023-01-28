@@ -1,0 +1,75 @@
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color: #eee;
+    background-color: #222;
+  }
+} */
+/* 
+body {
+  font-family: sans-serif;
+} */
+
+/* #output {
+  display: none;
+} */
+/* 
+@media print {
+  .container {
+    display: none;
+  }
+
+  #output {
+    display: block;
+  }
+} */
+
+/* Fix glitch in CSS framework */
+#download {
+  margin-bottom: var(--spacing);
+}
+
+
+.hidden {
+  display: none;
+}
+
+.bgColorContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: calc(1em * var(--line-height));
+}
+input[name="bgColor"] {
+  width:  calc(4rem * var(--line-height));
+  height: calc(1rem * var(--line-height));
+  padding: 0;
+  margin-bottom: 0;
+  /* height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2); */
+}
+label[for="bgColor"] {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.image-controls {
+  float: right;
+  /* Prevent being obscured by the filename */
+  position: relative;
+  z-index: 1;
+}
+
+.image-controls input {
+  width: 2em;
+  height: 2em;
+}
+
+input.inline {
+  margin-bottom: initial;
+  padding: initial;
+}
+
+.filename {
+  min-height: calc(var(--line-height) * 1em);
+  margin-bottom: var(--spacing);
+  font-size: 0.8em;
+  filter: brightness(0.8);
+}
