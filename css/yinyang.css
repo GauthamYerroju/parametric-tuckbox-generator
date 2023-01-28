@@ -1,0 +1,57 @@
+.yinyang {
+    display: flex;
+    align-items: center;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    background: linear-gradient(black 50%, white 0);
+    transition: transform 0.5s, border 0.5s;
+    animation: roll 2s infinite linear;
+}
+
+.yinyang:before {
+    flex: 1;
+    height: 50%;
+    border-radius: 50%;
+    background: white;
+    content: '';
+    border: solid 0.3333333em black;
+}
+
+.yinyang:after {
+    flex: 1;
+    height: 50%;
+    border-radius: 50%;
+    background: black;
+    content: '';
+    border: solid 0.3333333em white;
+}
+
+.yinyang.dark {
+    background: black;
+    border: solid 0.6666666em white;
+    animation: none;
+}
+
+.yinyang.light {
+    background: white;
+    border: solid 0.6666666em black;
+    animation: none;
+}
+
+.yinyang.dark:before,
+.yinyang.light:after {
+    width: 100%;
+    height: 100%;
+}
+
+.yinyang.dark:after,
+.yinyang.light:before {
+    display: none;
+}
+
+@keyframes roll {
+    to {
+        transform: rotate(1turn);
+    }
+}

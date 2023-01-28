@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en" data-theme="">
 
 <head>
   <meta charset="utf-8">
@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/pico.min.css">
   <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/yinyang.css">
 
   <!-- <meta name="theme-color" content="#fafafa"> -->
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="var(--primary)" />
@@ -26,6 +27,9 @@
 </head>
 
 <body>
+  <aside id="dark-mode" value="">
+    <div class="yinyang"></div>
+  </aside>
 
   <main class="container-fluid">
     <h1 id="title">Parametric Tuckbox Generator</h1>
@@ -141,9 +145,9 @@
                   Front image
                 </span>
                 <span class="image-controls">
-                  <input type="button" class="secondary inline" onclick="rotateImage('front')" value="⭮">
-                  <input type="button" class="secondary inline" onclick="removeImage('front')" value="🗙">
-                  <input type="button" class="secondary inline" onclick="uploadImage('front')" value="⤒">
+                  <input type="button" title="Rotate" class="secondary inline" onclick="rotateImage('front')" value="⭮">
+                  <input type="button" title="Close" class="secondary inline" onclick="removeImage('front')" value="🗙">
+                  <input type="button" title="Upload" class="secondary inline" onclick="uploadImage('front')" value="⤒">
                 </span>
                 <div id="frontFilename" class="filename"></div>
               </div>
@@ -155,9 +159,9 @@
                   Back image
                 </span>
                 <span class="image-controls">
-                  <input type="button" class="secondary inline" onclick="rotateImage('back')" value="⭮">
-                  <input type="button" class="secondary inline" onclick="removeImage('back')" value="🗙">
-                  <input type="button" class="secondary inline" onclick="uploadImage('back')" value="⤒">
+                  <input type="button" title="Rotate" class="secondary inline" onclick="rotateImage('back')" value="⭮">
+                  <input type="button" title="Close" class="secondary inline" onclick="removeImage('back')" value="🗙">
+                  <input type="button" title="Upload" class="secondary inline" onclick="uploadImage('back')" value="⤒">
                 </span>
                 <div id="backFilename" class="filename"></div>
               </div>
@@ -171,9 +175,9 @@
                   Left image
                 </span>
                 <span class="image-controls">
-                  <input type="button" class="secondary inline" onclick="rotateImage('left')" value="⭮">
-                  <input type="button" class="secondary inline" onclick="removeImage('left')" value="🗙">
-                  <input type="button" class="secondary inline" onclick="uploadImage('left')" value="⤒">
+                  <input type="button" title="Rotate" class="secondary inline" onclick="rotateImage('left')" value="⭮">
+                  <input type="button" title="Close" class="secondary inline" onclick="removeImage('left')" value="🗙">
+                  <input type="button" title="Upload" class="secondary inline" onclick="uploadImage('left')" value="⤒">
                 </span>
                 <div id="leftFilename" class="filename"></div>
               </div>
@@ -185,9 +189,9 @@
                   Right image
                 </span>
                 <span class="image-controls">
-                  <input type="button" class="secondary inline" onclick="rotateImage('right')" value="⭮">
-                  <input type="button" class="secondary inline" onclick="removeImage('right')" value="🗙">
-                  <input type="button" class="secondary inline" onclick="uploadImage('right')" value="⤒">
+                  <input type="button" title="Rotate" class="secondary inline" onclick="rotateImage('right')" value="⭮">
+                  <input type="button" title="Close" class="secondary inline" onclick="removeImage('right')" value="🗙">
+                  <input type="button" title="Upload" class="secondary inline" onclick="uploadImage('right')" value="⤒">
                 </span>
                 <div id="rightFilename" class="filename"></div>
               </div>
@@ -201,9 +205,9 @@
                   Top image
                 </span>
                 <span class="image-controls">
-                  <input type="button" class="secondary inline" onclick="rotateImage('top')" value="⭮">
-                  <input type="button" class="secondary inline" onclick="removeImage('top')" value="🗙">
-                  <input type="button" class="secondary inline" onclick="uploadImage('top')" value="⤒">
+                  <input type="button" title="Rotate" class="secondary inline" onclick="rotateImage('top')" value="⭮">
+                  <input type="button" title="Close" class="secondary inline" onclick="removeImage('top')" value="🗙">
+                  <input type="button" title="Upload" class="secondary inline" onclick="uploadImage('top')" value="⤒">
                 </span>
                 <div id="topFilename" class="filename"></div>
               </div>
@@ -215,9 +219,9 @@
                   Bottom image
                 </span>
                 <span class="image-controls">
-                  <input type="button" class="secondary inline" onclick="rotateImage('bottom')" value="⭮">
-                  <input type="button" class="secondary inline" onclick="removeImage('bottom')" value="🗙">
-                  <input type="button" class="secondary inline" onclick="uploadImage('bottom')" value="⤒">
+                  <input type="button" title="Rotate" class="secondary inline" onclick="rotateImage('bottom')" value="⭮">
+                  <input type="button" title="Close" class="secondary inline" onclick="removeImage('bottom')" value="🗙">
+                  <input type="button" title="Upload" class="secondary inline" onclick="uploadImage('bottom')" value="⤒">
                 </span>
                 <div id="bottomFilename" class="filename"></div>
               </div>

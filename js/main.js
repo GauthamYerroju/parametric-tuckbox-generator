@@ -70,6 +70,24 @@ window.addEventListener('load', () => {
     })
   })
 
+  document.getElementById('dark-mode').addEventListener('click', ev => {
+    const mode = ev.target.value
+    let newMode;
+    if (mode === '') {
+      newMode = 'light'
+    } else if (mode === 'light') {
+      newMode = 'dark'
+    } else {
+      newMode = ''
+    }
+    document.querySelector('html').dataset.theme = newMode
+    document.querySelector('.yinyang').classList.remove('dark', 'light')
+    if (newMode !== '') {
+      document.querySelector('.yinyang').classList.add(newMode)
+    }
+    ev.target.value = newMode
+  })
+
   draw(ctx, scale)
 })
 

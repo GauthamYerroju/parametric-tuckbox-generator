@@ -28,9 +28,16 @@ body {
   margin-bottom: var(--spacing);
 }
 
-
 .hidden {
   display: none;
+}
+
+#dark-mode {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  width: 2em;
+  height: 2em;
 }
 
 .bgColorContainer {
@@ -38,13 +45,15 @@ body {
   align-items: center;
   margin-bottom: calc(1em * var(--line-height));
 }
+
 input[name="bgColor"] {
-  width:  calc(4rem * var(--line-height));
+  width: calc(4rem * var(--line-height));
   height: calc(1rem * var(--line-height));
   padding: 0;
   margin-bottom: 0;
   /* height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2); */
 }
+
 label[for="bgColor"] {
   display: inline-block;
   margin-right: 0.5em;
